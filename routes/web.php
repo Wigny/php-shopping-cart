@@ -23,3 +23,7 @@ Route::resource('/produtos', 'ProdutoController');
 Route::resource('/usuarios', 'UsuarioController');
 Route::resource('/usuarios/{usuario}/carrinho', 'CarrinhoController');
 Route::resource('/usuarios/{usuario}/compra', 'CompraController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
