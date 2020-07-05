@@ -38,10 +38,11 @@ class CompraController extends Controller
   /**
    * Store a newly created resource in storage.
    *
+   * @param  int  $usuario
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(int $usuario, Request $request)
   {
     $compras = Compra::find($request->compras);
 
@@ -59,7 +60,7 @@ class CompraController extends Controller
       }
     }
 
-    return $compras;
+    return $this->index($usuario);
   }
 
   /**

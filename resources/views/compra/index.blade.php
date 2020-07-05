@@ -14,7 +14,7 @@
       <tr>
         <th>Produto</th>
         <th>Quantidade</th>
-        <th>Valor</th>
+        <th>Valor Unitário</th>
         <th>Data</th>
       </tr>
     </thead>
@@ -23,7 +23,7 @@
       <tr>
         <td class="align-middle">{{ $compra->produto->produto }}</td>
         <td class="align-middle">{{ $compra->quantidade }}</td>
-        <td class="align-middle">R${{ $compra->quantidade * $compra->produto->valor }}</td>
+        <td class="align-middle">R${{ $compra->produto->valor }}</td>
         <td class="align-middle">{{ $compra->created_at->format('d/m/Y H:i') }}</td>
       </tr>
       @endforeach
