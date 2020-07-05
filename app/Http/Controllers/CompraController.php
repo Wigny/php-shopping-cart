@@ -15,15 +15,14 @@ class CompraController extends Controller
    */
   public function index(int $usuario)
   {
-    $compras = fn ($compra) => $compra
-      ->where('usuario_id', $usuario)
-      ->where('finalizado', true);
-
-    $produtos = Produto::whereHas('compras', $compras)->get();
+    $compras = Compra::where('usuario_id', $usuario)
+      ->where('finalizado', true)
+      ->with('produto')
+      ->get();
 
     return view(
       'compra.index',
-      array('produtos' => $produtos),
+      array('compras' => $compras),
     );
   }
 

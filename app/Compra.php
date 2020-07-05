@@ -8,7 +8,7 @@ class Compra extends Model
 {
     protected $primaryKey = 'id';
     protected $table = 'compras';
-    protected $fillable = ['usuario_id', 'produto_id', 'quantidade', 'data', 'finalizado'];
+    protected $fillable = ['usuario_id', 'produto_id', 'quantidade', 'finalizado'];
 
     public function setQuantidade($value)
     {
