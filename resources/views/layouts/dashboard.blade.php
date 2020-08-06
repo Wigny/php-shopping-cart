@@ -11,7 +11,7 @@
   <title>@yield('title')</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
   <meta name="theme-color" content="#563d7c">
 
@@ -32,7 +32,7 @@
     }
   </style>
   <!-- Custom styles for this template -->
-  <link href="https://getbootstrap.com/docs/4.5/examples/dashboard/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
 
 <body>
@@ -60,12 +60,12 @@
 
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/jquery-3.4.1.slim.min.js') }}"></script>
   <script>
-    window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+    window.jQuery || document.write('<script src="{{ asset("js\/jquery-3.4.1.slim.min.js") }}"><\/script>')
   </script>
-  <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"> </script>
+  <script src="{{ asset('js/feather.min.js') }}"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
   <script src="{{ asset('js/dashboard.js') }}"> </script>
 </body>
