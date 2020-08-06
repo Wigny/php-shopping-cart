@@ -12,11 +12,16 @@ class Produto extends Model
 
     public function setEstoqueAttribute($value)
     {
-        $this->attributes['estoque'] = $value ?: 1;
+        $this->attributes['estoque'] = $value !== null ? $value : 0;
     }
 
     public function setImagemAttribute($value)
     {
         $this->attributes['imagem'] = $value ?: '/images/404.jpg';
+    }
+
+    public function compras()
+    {
+        return $this->hasMany('App\Compra');
     }
 }

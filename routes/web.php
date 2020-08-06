@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn () => view('welcome'));
-
 Route::get('/sobre', fn () => view('sobre'));
 
-Route::resource('/usuarios', 'UsuarioController');
-Route::resource('/produtos', 'ProdutoController');
-Route::get('/usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usuarios.delete');
 Route::get('/produtos/{produto}/delete', 'ProdutoController@delete')->name('produtos.delete');
+Route::get('/usuarios/{usuario}/delete', 'UsuarioController@delete')->name('usuarios.delete');
 
 Route::resource('/produtos', 'ProdutoController');
-Route::get('/produtos/{produto}/delete', 'ProdutoController@delete')->name('produtos.delete');
+Route::resource('/usuarios', 'UsuarioController');
+Route::resource('/usuarios/{usuario}/carrinho', 'CarrinhoController');
+Route::resource('/usuarios/{usuario}/compra', 'CompraController');

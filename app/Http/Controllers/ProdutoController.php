@@ -14,7 +14,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('id', 'ASC')->get();
+        $produtos = Produto::orderBy('id', 'ASC')
+            ->where('estoque', '>', 0)
+            ->get();
 
         return view(
             'produto.index',

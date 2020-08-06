@@ -24,7 +24,24 @@
       <div class="card mt-4">
         <img class="card-img-top img-fluid" src="{{ $produto->imagem }}" alt="{{ $produto->produto }}" style="max-height: 500px; object-fit: cover;">
         <div class="card-body">
-          <h3 class="card-title">{{ $produto->produto }}</h3>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+            <h3 class="card-title">{{ $produto->produto }}</h3>
+
+            @if($produto->estoque)
+            <!-- TODO: usuario -->
+            <form action="{{ route('carrinho.store', 1) }}" method="post">
+              @csrf
+              <input type="number" name="produto" value="{{ $produto->id }}" hidden>
+
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" name="quantidade" value="1" min="1" max="{{ $produto->estoque }}" width="60px">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">Adicionar ao carrinho</button>
+                </div>
+              </div>
+            </form>
+            @endif
+          </div>
           <h4>R${{ $produto->valor }}</h4>
           <p class="card-text">{{ $produto->descricao }}</p>
           <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span> 4.0 stars
